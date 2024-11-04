@@ -1,0 +1,116 @@
+@use './partials/global' as *;
+
+
+.header {
+    background-color: $dark-primary-color;
+    &__title {
+        color: $dark-bg-text-color;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 400;
+        padding: 24px 0 16px 0;
+    }
+    // &__nav {}
+    &__list {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    &__item {
+        text-align: center;
+        padding: 0 0 16px 0;
+        &--underline {
+            border-bottom: 5px solid $dark-bg-text-color;
+        }
+    }
+    &__link {
+        color: $dark-bg-text-color;
+        text-decoration: none;
+        &--highlight {
+            font-weight: 700;
+        }
+    }
+}
+
+.hero {
+    background-image: url(../assets/images/hero-bio.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    &__title {
+        text-transform: capitalize;
+        padding-left: 16px;
+        color: $dark-bg-text-color;
+        z-index: 2;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $dark-primary-color;
+        opacity: 50%;
+        z-index: 1;
+    }
+}
+
+.about {
+    @include flex-center(column);
+    margin: 24px 16px 16px 16px;
+    &__title {
+        margin: 0 0 16px 0;
+    }
+    &__image {
+        width: 100%;
+        height: 28vh;
+    }
+    // &__quote {}
+    &__quote-text {
+        margin: 16px 0;
+    }
+    &__text {
+        margin: 16px 0;
+    }
+    // &__description {}
+    &__subtitle {
+        margin: 16px 0;
+    }
+    &__history {
+        margin: 16px 0;
+    }
+}
+
+.gallery {
+    @include flex-center($direction: column);
+    margin: 0 16px;
+    &__title {}
+    &__image {
+        width: 100%;
+        margin: 8px 0;
+    }
+}
+
+.footer {
+    color: $dark-bg-text-color;
+    background-color: $dark-primary-color;
+    padding: 0 16px;
+    &__title {
+        padding: 24px 0 0 0;
+    }
+    &__socials {
+        @include flex-center($justify: space-between);
+    }
+    &__link {}
+    &__icon {}
+    &__information {}
+    &__subtitle {}
+    &__text {}
+    &__copyright {}
+    &__name {}
+}

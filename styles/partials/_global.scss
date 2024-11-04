@@ -1,0 +1,123 @@
+$desktop: 1280px;
+$tablet: 786px;
+$mobile:'';
+
+$dark-primary-color: #323232;
+$secondary-text-color: #AFAFAF;
+$dark-bg-text-color: #FFFFFF;
+$cta-hover-color: #000000;
+$divider-color: #e1e1e1;
+$alternative-bg-light-color: #FAFAFA;
+
+@font-face {
+    font-family: 'NunitoSans';
+    src: url(../../assets/fonts/woff2/NunitoSans-Regular.woff2) format(woff2);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NunitoSans';
+    src: url(../../assets/fonts/woff2/NunitoSans-Medium.woff2) format(woff2);
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NunitoSans';
+    src: url(../../assets/fonts/woff2/NunitoSans-Bold.woff2) format(woff2);
+    font-weight: 700;
+    font-style: normal;
+}
+
+@mixin tablet {
+    @media (min-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'NunitoSans';
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    @include tablet {
+        font-size: 60px;
+        line-height: 68px;
+    }
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    @include tablet {
+        font-size: 36px;
+        line-height: 44px;
+    }
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+    @include tablet {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32px;
+    }
+}
+
+p {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    @include tablet {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+    }
+}
+
+footer p {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    @include tablet {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+    }
+}
+
+// buttons {
+//     font-size: 10px;
+//     font-weight: 700;
+//     line-height: 20px;
+//     @include tablet {
+//         font-size: 12px;
+//         line-height: 20px;
+//     }
+// }
+
+@mixin flex-center ($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}

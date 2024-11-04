@@ -1,1 +1,202 @@
-/*# sourceMappingURL=bio.css.map */
+@font-face {
+  font-family: "NunitoSans";
+  src: url(../../assets/fonts/woff2/NunitoSans-Regular.woff2) format(woff2);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NunitoSans";
+  src: url(../../assets/fonts/woff2/NunitoSans-Medium.woff2) format(woff2);
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NunitoSans";
+  src: url(../../assets/fonts/woff2/NunitoSans-Bold.woff2) format(woff2);
+  font-weight: 700;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "NunitoSans";
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+@media (min-width: 786px) {
+  h1 {
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+@media (min-width: 786px) {
+  h2 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+}
+@media (min-width: 786px) {
+  h3 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+  }
+}
+
+p {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
+@media (min-width: 786px) {
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+}
+
+footer p {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
+@media (min-width: 786px) {
+  footer p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
+
+.header {
+  background-color: #323232;
+}
+.header__title {
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 400;
+  padding: 24px 0 16px 0;
+}
+.header__list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.header__item {
+  text-align: center;
+  padding: 0 0 16px 0;
+}
+.header__item--underline {
+  border-bottom: 5px solid #FFFFFF;
+}
+.header__link {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.header__link--highlight {
+  font-weight: 700;
+}
+
+.hero {
+  background-image: url(../assets/images/hero-bio.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 35vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.hero__title {
+  text-transform: capitalize;
+  padding-left: 16px;
+  color: #FFFFFF;
+  z-index: 2;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #323232;
+  opacity: 50%;
+  z-index: 1;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 16px 16px 16px;
+}
+.about__title {
+  margin: 0 0 16px 0;
+}
+.about__image {
+  width: 100%;
+  height: 28vh;
+}
+.about__quote-text {
+  margin: 16px 0;
+}
+.about__text {
+  margin: 16px 0;
+}
+.about__subtitle {
+  margin: 16px 0;
+}
+.about__history {
+  margin: 16px 0;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 16px;
+}
+.gallery__image {
+  width: 100%;
+  margin: 8px 0;
+}
+
+.footer {
+  color: #FFFFFF;
+  background-color: #323232;
+  padding: 0 16px;
+}
+.footer__title {
+  padding: 24px 0 0 0;
+}
+.footer__socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}/*# sourceMappingURL=bio.css.map */
