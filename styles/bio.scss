@@ -61,7 +61,6 @@
 }
 
 .about {
-    @include flex-center(column);
     margin: 24px 16px 16px 16px;
     &__title {
         margin: 0 0 16px 0;
@@ -82,14 +81,14 @@
         margin: 16px 0;
     }
     &__history {
-        margin: 16px 0;
+        margin: 24px 0;
     }
 }
 
 .gallery {
-    @include flex-center($direction: column);
-    margin: 0 16px;
-    &__title {}
+    background-color: $alternative-bg-light-color;
+    padding: 24px 16px 8px 16px;
+    // &__title {}
     &__image {
         width: 100%;
         margin: 8px 0;
@@ -103,14 +102,23 @@
     &__title {
         padding: 24px 0 0 0;
     }
-    &__socials {
-        @include flex-center($justify: space-between);
+    // &__socials {}
+    // &__link {}
+    &__icon {
+        padding: 24px 24px 0 0;
     }
-    &__link {}
-    &__icon {}
-    &__information {}
-    &__subtitle {}
-    &__text {}
-    &__copyright {}
-    &__name {}
+    // &__information {}
+    &__subtitle {
+        padding: 24px 0 0 0;
+    }
+    &__text {
+        padding: 16px 0 0 0;
+    }
+    &__copyright {
+        padding: 24px 0;
+    }
+    &__name {
+        padding: 16px 0 0 0;
+        font-weight: 400;
+    }
 }

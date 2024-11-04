@@ -148,10 +148,6 @@ footer p {
 }
 
 .about {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 24px 16px 16px 16px;
 }
 .about__title {
@@ -171,15 +167,12 @@ footer p {
   margin: 16px 0;
 }
 .about__history {
-  margin: 16px 0;
+  margin: 24px 0;
 }
 
 .gallery {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 16px;
+  background-color: #FAFAFA;
+  padding: 24px 16px 8px 16px;
 }
 .gallery__image {
   width: 100%;
@@ -194,9 +187,19 @@ footer p {
 .footer__title {
   padding: 24px 0 0 0;
 }
-.footer__socials {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+.footer__icon {
+  padding: 24px 24px 0 0;
+}
+.footer__subtitle {
+  padding: 24px 0 0 0;
+}
+.footer__text {
+  padding: 16px 0 0 0;
+}
+.footer__copyright {
+  padding: 24px 0;
+}
+.footer__name {
+  padding: 16px 0 0 0;
+  font-weight: 400;
 }/*# sourceMappingURL=bio.css.map */
