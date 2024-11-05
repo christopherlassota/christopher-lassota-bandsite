@@ -1,31 +1,53 @@
 @use './partials/global' as *;
 
-
 .header {
     background-color: $dark-primary-color;
+    &__nav {
+        @include tablet {
+            @include flex-center(row, flex-start, flex-end);
+        }
+    }
     &__title {
         color: $dark-bg-text-color;
         text-transform: uppercase;
         text-align: center;
         font-weight: 400;
         padding: 24px 0 16px 0;
+        @include tablet {
+            padding: 16px 64px 16px 32px;
+            font-size: 24px;
+        }
     }
-    // &__nav {}
+    
     &__list {
         list-style-type: none;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        @include tablet {
+            justify-content: space-evenly;
+            width: 40%;
+        }
     }
+
     &__item {
         text-align: center;
+        width: 50%;
         padding: 0 0 16px 0;
+        @include tablet {
+            padding: 0 0 16px 0;
+            width: 0%;
+        }
+
         &--underline {
             border-bottom: 5px solid $dark-bg-text-color;
         }
     }
+
     &__link {
         color: $dark-bg-text-color;
         text-decoration: none;
+    
         &--highlight {
             font-weight: 700;
         }
@@ -41,12 +63,17 @@
     display: flex;
     align-items: center;
     position: relative;
+    @include tablet {
+        height: 60vh;
+    }
+
     &__title {
         text-transform: capitalize;
         padding-left: 16px;
         color: $dark-bg-text-color;
         z-index: 2;
     }
+
     &::before {
         content: '';
         position: absolute;
@@ -61,64 +88,122 @@
 }
 
 .about {
-    margin: 24px 16px 16px 16px;
-    &__title {
-        margin: 0 0 16px 0;
+    padding: 0 16px 16px 16px;
+    @include tablet {
+        padding: 16px 80px 0 80px;
     }
+
+    &__title {
+        padding: 24px 16px 16px 16px;
+        @include tablet {
+            padding: 36px 0 0 32px;
+        }
+    }
+
     &__image {
         width: 100%;
         height: 28vh;
+        @include tablet {
+            height: 56vh;
+            padding: 0 0 32px 0;
+        }
     }
+
     // &__quote {}
     &__quote-text {
-        margin: 16px 0;
+        padding: 0 0 16px 0;
+        @include tablet {
+            font-weight: 700;
+        }
     }
+
+    &__quote-author {
+        @include tablet {
+            font-size: 18px;
+            font-weight: 700
+        }
+    }
+
     &__text {
-        margin: 16px 0;
+        padding: 16px 0;
     }
-    // &__description {}
+
+    &__description {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
     &__subtitle {
-        margin: 16px 0;
+        padding: 40px 0 0 0;
     }
+
     &__history {
-        margin: 24px 0;
+        padding: 24px 0;
+        @include tablet {
+            width: 48%;
+        }
     }
 }
 
 .gallery {
     background-color: $alternative-bg-light-color;
     padding: 24px 16px 8px 16px;
-    // &__title {}
+    @include tablet {
+        padding: 40px;
+    }
+// &__title {}
+    &__showcase {
+        @include tablet {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    }
+    
     &__image {
         width: 100%;
         margin: 8px 0;
+        @include tablet {
+            flex: 0 0 27%;
+            height: 18vh;
+        }
     }
 }
+
 
 .footer {
     color: $dark-bg-text-color;
     background-color: $dark-primary-color;
     padding: 0 16px;
+    
     &__title {
         padding: 24px 0 0 0;
     }
     // &__socials {}
     // &__link {}
+    
     &__icon {
         padding: 24px 24px 0 0;
     }
     // &__information {}
+    
     &__subtitle {
         padding: 24px 0 0 0;
     }
+    
     &__text {
         padding: 16px 0 0 0;
     }
+    
     &__copyright {
         padding: 24px 0;
     }
+    
     &__name {
         padding: 16px 0 0 0;
+        font-size: 24px;
         font-weight: 400;
     }
 }
