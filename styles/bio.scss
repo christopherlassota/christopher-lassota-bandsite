@@ -177,20 +177,65 @@
     color: $dark-bg-text-color;
     background-color: $dark-primary-color;
     padding: 0 16px;
-    
-    &__title {
-        padding: 24px 0 0 0;
+    position: relative;
+    @include tablet {
+        padding: 32px;
     }
-    // &__socials {}
+    
+    &__title-box {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__title {
+        padding: 24px 0 16px 0;
+        @include tablet {
+            padding: 0;
+        }
+    }
+
+    &__socials {
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     // &__link {}
+
+    &__logo {
+        display: none;
+        @include tablet {
+            display: block;
+            font-size: 24px;
+            font-weight: 400;
+        }
+    }
     
     &__icon {
-        padding: 24px 24px 0 0;
+        @include tablet {
+            width: 35px;
+            height: 35px;
+        }
     }
-    // &__information {}
+
+    &__information {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    // &__card {}
     
     &__subtitle {
         padding: 24px 0 0 0;
+        @include tablet {
+            font-size: 16px;
+            font-weight: 700;
+        }
     }
     
     &__text {
@@ -205,5 +250,8 @@
         padding: 16px 0 0 0;
         font-size: 24px;
         font-weight: 400;
+        @include tablet {
+            display: none;
+        }
     }
 }
