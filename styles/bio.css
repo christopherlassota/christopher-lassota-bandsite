@@ -121,8 +121,8 @@ footer p {
 }
 @media (min-width: 786px) {
   .header__list {
-    justify-content: space-evenly;
-    width: 40%;
+    justify-content: space-between;
+    width: 20%;
   }
 }
 .header__item {
@@ -132,7 +132,6 @@ footer p {
 }
 @media (min-width: 786px) {
   .header__item {
-    padding: 0 0 16px 0;
     width: 0%;
   }
 }
@@ -143,8 +142,18 @@ footer p {
   color: #FFFFFF;
   text-decoration: none;
 }
+@media (min-width: 786px) {
+  .header__link {
+    padding: 0 0 16px 0;
+  }
+}
 .header__link--highlight {
   font-weight: 700;
+}
+@media (min-width: 786px) {
+  .header__link--highlight {
+    border-bottom: 5px solid #FFFFFF;
+  }
 }
 
 .hero {
