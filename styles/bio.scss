@@ -1,4 +1,6 @@
 @use './partials/global' as *;
+@use './partials/_variables' as *;
+@use './partials/_mixins' as *;
 
 .header {
     background-color: $dark-primary-color;
@@ -12,10 +14,10 @@
         text-transform: uppercase;
         text-align: center;
         font-weight: 400;
-        padding: 24px 0 16px 0;
+        padding: 1.5rem 0 1rem 0;
         @include tablet {
-            padding: 16px 64px 16px 32px;
-            font-size: 24px;
+            padding: 1rem 4rem 1rem 2rem;
+            font-size: 1.5rem;
         }
     }
     
@@ -33,13 +35,13 @@
     &__item {
         text-align: center;
         width: 50%;
-        padding: 0 0 16px 0;
+        padding: 0 0 1rem 0;
         @include tablet {
             width: 0%;
         }
         
         &--underline {
-            border-bottom: 5px solid $dark-bg-text-color;
+            border-bottom: 0.3125rem solid $dark-bg-text-color;
         }
     }
     
@@ -47,14 +49,14 @@
         color: $dark-bg-text-color;
         text-decoration: none;
         @include tablet {
-            padding: 0 0 16px 0;
+            padding: 0 0 1rem 0;
             
         }
         
         &--highlight {
             font-weight: 700;
             @include tablet {
-                border-bottom: 5px solid $dark-bg-text-color;
+                border-bottom: 0.3125rem solid $dark-bg-text-color;
             }
         }
     }
@@ -75,7 +77,7 @@
 
     &__title {
         text-transform: capitalize;
-        padding-left: 16px;
+        padding-left: 1rem;
         color: $dark-bg-text-color;
         z-index: 2;
     }
@@ -94,15 +96,15 @@
 }
 
 .about {
-    padding: 0 16px 16px 16px;
+    padding: 0 1rem 1rem 1rem;
     @include tablet {
-        padding: 16px 80px 0 80px;
+        padding: 1rem 5rem 0 5rem;
     }
 
     &__title {
-        padding: 24px 16px 16px 16px;
+        padding: 1.5rem 1rem 1rem 1rem;
         @include tablet {
-            padding: 36px 0 0 32px;
+            padding: 2.25rem 0 0 2rem;
         }
     }
 
@@ -111,13 +113,13 @@
         height: 28vh;
         @include tablet {
             height: 56vh;
-            padding: 0 0 32px 0;
+            padding: 0 0 2rem 0;
         }
     }
 
     // &__quote {}
     &__quote-text {
-        padding: 0 0 16px 0;
+        padding: 0 0 1rem 0;
         @include tablet {
             font-weight: 700;
         }
@@ -125,13 +127,13 @@
 
     &__quote-author {
         @include tablet {
-            font-size: 18px;
+            font-size: 1.125rem;
             font-weight: 700
         }
     }
 
     &__text {
-        padding: 16px 0;
+        padding: 1rem 0;
     }
 
     &__description {
@@ -142,11 +144,11 @@
     }
 
     &__subtitle {
-        padding: 40px 0 0 0;
+        padding: 2.5rem 0 0 0;
     }
 
     &__history {
-        padding: 24px 0;
+        padding: 1.5rem 0;
         @include tablet {
             width: 48%;
         }
@@ -155,9 +157,9 @@
 
 .gallery {
     background-color: $alternative-bg-light-color;
-    padding: 24px 16px 8px 16px;
+    padding: 1.5rem 1rem 0.5rem 1rem;
     @include tablet {
-        padding: 40px;
+        padding: 2.5rem;
     }
 // &__title {}
     &__showcase {
@@ -170,7 +172,7 @@
     
     &__image {
         width: 100%;
-        margin: 8px 0;
+        margin: 0.5rem 0;
         @include tablet {
             flex: 0 0 27%;
             height: 18vh;
@@ -182,10 +184,10 @@
 .footer {
     color: $dark-bg-text-color;
     background-color: $dark-primary-color;
-    padding: 0 16px;
+    padding: 0 1rem;
     position: relative;
     @include tablet {
-        padding: 32px;
+        padding: 2rem;
     }
     
     &__title-box {
@@ -197,7 +199,7 @@
     }
 
     &__title {
-        padding: 24px 0 16px 0;
+        padding: 1.5rem 0 1rem 0;
         @include tablet {
             padding: 0;
         }
@@ -215,15 +217,15 @@
         display: none;
         @include tablet {
             display: block;
-            font-size: 24px;
+            font-size: 1.5rem;
             font-weight: 400;
         }
     }
     
     &__icon {
         @include tablet {
-            width: 35px;
-            height: 35px;
+            width: 2.1875rem;
+            height: 2.1875rem;
         }
     }
 
@@ -237,24 +239,24 @@
     // &__card {}
     
     &__subtitle {
-        padding: 24px 0 0 0;
+        padding: 1.5rem 0 0 0;
         @include tablet {
-            font-size: 16px;
+            font-size: 1rem;
             font-weight: 700;
         }
     }
     
     &__text {
-        padding: 16px 0 0 0;
+        padding: 1rem 0 0 0;
     }
     
     &__copyright {
-        padding: 24px 0;
+        padding: 1.5rem 0;
     }
     
     &__name {
-        padding: 16px 0 0 0;
-        font-size: 24px;
+        padding: 1rem 0 0 0;
+        font-size: 1.5rem;
         font-weight: 400;
         @include tablet {
             display: none;
