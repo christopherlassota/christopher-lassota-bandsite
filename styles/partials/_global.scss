@@ -2,7 +2,7 @@ $desktop: 1280px;
 $tablet: 867px;
 $dark-primary-color: #323232;
 $secondary-text-color: #AFAFAF;
-$dark-bg-text-color: #FFFFFF;
+$light-text: #FFFFFF;
 $cta-hover-color: #000000;
 $divider-color: #e1e1e1;
 $alternative-bg-light-color: #FAFAFA;
@@ -107,19 +107,16 @@ a {
     text-decoration: none;
 }
 
-// buttons {
-//     font-size: 0.625rem;
-//     font-weight: 700;
-//     line-height: 1.25rem;
-//     @include tablet {
-//         font-size: 0.75rem;
-//         line-height: 1.25rem;
-//     }
-// }
-
 @mixin flex-center ($direction: row, $justify: center, $align: center) {
     display: flex;
     flex-direction: $direction;
     justify-content: $justify;
     align-items: $align;
+}
+
+@mixin bandsite-logo() {
+    color: $light-text;
+    font-size: 1.5rem;
+    font-weight: 400;
+    background-color: $dark-primary-color;
 }
