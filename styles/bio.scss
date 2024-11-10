@@ -7,7 +7,7 @@
         @include tablet {
             @include flex-center(row, flex-start);
             @include desktop {
-                padding: 0 128px;
+                padding: 0 8rem;
             }
         }
     }
@@ -15,10 +15,14 @@
     &__title {
         @include bandsite-logo();
         text-align: center;
-        padding: 16px 0 0 0;
+        padding: 1rem 0 0 0;
         @include tablet {
-            padding: 16px 32px;
+            padding: 1rem 2rem;
         }
+    }
+
+    &__logo {
+        color: inherit;
     }
 
     &__list {
@@ -27,18 +31,18 @@
     }
 
     &__item {
-        padding: 0 0 16px 0;
+        padding: 0 0 1rem 0;
         width: 50%;
         text-align: center;
         @include tablet {
             width: 100%;
             padding: 0;
-            margin: 0 32px;
+            margin: 0 2rem;
 
         }
 
         &--highlight {
-            border-bottom: 4px solid $light-text;
+            border-bottom: 0.25rem solid $light-text;
             font-weight: 700;
             @include tablet {
                 border-bottom: none;
@@ -49,12 +53,12 @@
     &__link {
         color: $light-text;
         @include tablet {
-            padding: 0 0 24px 0;
+            padding: 0 0 1.5rem 0;
         }
 
         &--highlight {
             @include tablet {
-            border-bottom: 4px solid $light-text;
+            border-bottom: 0.25rem solid $light-text;
             }
         }
     }
@@ -83,7 +87,7 @@
         color: $light-text;
         z-index: 2;
         @include desktop {
-            padding: 0 160px;
+            padding: 0 10rem;
         }
     }
 
@@ -105,7 +109,7 @@
     @include tablet {
         padding: 1rem 5rem 0 5rem;
         @include desktop {
-            padding: 1rem 240px;
+            padding: 1rem 15rem;
         }
     }
 
@@ -114,7 +118,7 @@
         @include tablet {
             padding: 2.25rem 0 0 2rem;
             @include desktop {
-                padding: 2.25rem 160px;
+                padding: 2.25rem 10rem;
             }
         }
     }
@@ -171,7 +175,7 @@
     @include tablet {
         padding: 2.5rem;
         @include desktop {
-            padding: 2.5rem 160px;
+            padding: 2.5rem 10rem;
         }
     }
 
@@ -205,7 +209,7 @@
     @include tablet {
         padding: 2rem;
         @include desktop {
-            padding: 2rem 160px;
+            padding: 2rem 10rem;
         }
     }
     
@@ -252,8 +256,8 @@
     
     &__icon {
         @include tablet {
-            width: 24px;
-            height: 24px;
+            width: 1.5rem;
+            height: 1.5rem;
         }
     }
 
