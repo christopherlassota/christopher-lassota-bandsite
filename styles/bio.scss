@@ -1,14 +1,18 @@
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
 @use './partials/global' as *;
 
 .header {
-    background-color: $dark-primary-color;
+    background-color: $bandsite-black;
     
     &__nav {
+        
         @include tablet {
             @include flex-center(row, flex-start);
-            @include desktop {
-                padding: 0 8rem;
-            }
+        }
+
+        @include desktop {
+            padding: 0 8rem;
         }
     }
     
@@ -16,6 +20,7 @@
         @include bandsite-logo();
         text-align: center;
         padding: 1rem 0 0 0;
+        
         @include tablet {
             padding: 1rem 2rem;
         }
@@ -34,6 +39,7 @@
         padding: 0 0 1rem 0;
         width: 50%;
         text-align: center;
+        
         @include tablet {
             width: 100%;
             padding: 0;
@@ -44,6 +50,7 @@
         &--highlight {
             border-bottom: 0.25rem solid $light-text;
             font-weight: 700;
+            
             @include tablet {
                 border-bottom: none;
             }
@@ -52,6 +59,7 @@
 
     &__link {
         color: $light-text;
+        
         @include tablet {
             padding: 0 0 1.5rem 0;
         }
@@ -61,6 +69,7 @@
         }
 
         &--highlight {
+            
             @include tablet {
             border-bottom: 0.25rem solid $light-text;
             }
@@ -77,11 +86,13 @@
     display: flex;
     align-items: center;
     position: relative;
+    
     @include tablet {
         height: 60vh;
-        @include desktop {
-            height: 90vh;
-        }
+    }
+
+    @include desktop {
+        height: 90vh;
     }
 
     
@@ -90,6 +101,7 @@
         padding-left: 1rem;
         color: $light-text;
         z-index: 2;
+    
         @include desktop {
             padding: 0 10rem;
         }
@@ -102,7 +114,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: $dark-primary-color;
+        background-color: $bandsite-black;
         opacity: 50%;
         z-index: 1;
     }
@@ -110,26 +122,31 @@
 
 .about {
     padding: 0 1rem 1rem 1rem;
+    
     @include tablet {
         padding: 1rem 5rem 0 5rem;
-        @include desktop {
-            padding: 1rem 15rem;
-        }
+    }
+    
+    @include desktop {
+        padding: 1rem 15rem;
     }
 
     &__title {
         padding: 1.5rem 1rem 1rem 1rem;
+
         @include tablet {
             padding: 2.25rem 0 0 2rem;
-            @include desktop {
-                padding: 2.25rem 10rem;
-            }
+        }
+
+        @include desktop {
+            padding: 2.25rem 10rem;
         }
     }
 
     &__image {
         width: 100%;
         height: 28vh;
+
         @include tablet {
             height: auto;
             padding: 0 0 2rem 0;
@@ -138,12 +155,14 @@
 
     &__quote-text {
         padding: 0 0 1rem 0;
+
         @include tablet {
             font-weight: 700;
         }
     }
 
     &__quote-author {
+
         @include tablet {
             font-size: 1.125rem;
             font-weight: 700
@@ -155,6 +174,7 @@
     }
 
     &__description {
+
         @include tablet {
             display: flex;
             justify-content: space-between;
@@ -174,16 +194,19 @@
 }
 
 .gallery {
-    background-color: $alternative-bg-light-color;
+    background-color: $alabaster;
     padding: 1.5rem 1rem 0.5rem 1rem;
+
     @include tablet {
         padding: 2.5rem;
-        @include desktop {
-            padding: 2.5rem 10rem;
-        }
+    }
+    
+    @include desktop {
+        padding: 2.5rem 10rem;
     }
 
     &__showcase {
+    
         @include tablet {
             display: flex;
             flex-wrap: wrap;
@@ -195,13 +218,15 @@
         width: 100%;
         margin: 0.5rem 0;
         filter: grayscale(100%);
+    
         @include tablet {
             flex: 0 0 32%;
-            width: 18vw;
-            @include desktop {
-                flex: 0 0 32%;
-                width: 24vw;
-            }
+            width: 18vw;    
+        }
+       
+        @include desktop {
+            flex: 0 0 32%;
+            width: 24vw;
         }
 
         &:hover {
@@ -213,16 +238,19 @@
 
 .footer {
     color: $light-text;
-    background-color: $dark-primary-color;
+    background-color: $bandsite-black;
     padding: 0 1rem;
+    
     @include tablet {
         padding: 2rem;
-        @include desktop {
-            padding: 2rem 10rem;
-        }
+    }
+    
+    @include desktop {
+        padding: 2rem 10rem;
     }
     
     &__title-box {
+    
         @include tablet {
             display: flex;
             justify-content: space-between;
@@ -233,6 +261,7 @@
 
     &__title {
         padding: 1.5rem 0 1rem 0;
+    
         @include tablet {
             padding: 0;
         }
@@ -243,19 +272,22 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+    
         @include tablet {
             width: 20%;
             position: absolute;
             left: 38%;
-            @include desktop {
-                width: 15%;
-                left: 28%;
-            }
+        }
+
+        @include desktop {
+            width: 15%;
+            left: 28%;
         }
     }
 
     &__logo {
         display: none;
+
         @include tablet {
             display: block;
             font-size: 1.5rem;
@@ -264,6 +296,7 @@
     }
     
     &__icon {
+
         @include tablet {
             width: 1.5rem;
             height: 1.5rem;
@@ -272,16 +305,19 @@
 
 
     &__information {
+
         @include tablet {
             display: flex;
             justify-content: space-between;
-            @include desktop {
-                justify-content: flex-start;
-            }
+        }
+
+        @include desktop {
+            justify-content: flex-start;
         }
     }
 
     &__card {
+
         @include desktop {
             width: 28%
         }
@@ -289,6 +325,7 @@
     
     &__subtitle {
         padding: 1.5rem 0 0 0;
+
         @include tablet {
             font-size: 1rem;
             font-weight: 700;
@@ -298,6 +335,7 @@
     &__text {
         padding: 1rem 0 0 0;
         width: 39%;
+
         @include tablet {
             width: 65%;
         }
@@ -310,6 +348,7 @@
     &__name {
         padding: 1rem 0 0 0;
         @include bandsite-logo();
+
         @include tablet {
             display: none;
         }

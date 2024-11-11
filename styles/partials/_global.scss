@@ -1,43 +1,25 @@
-$desktop: 1280px;
-$tablet: 867px;
-$dark-primary-color: #323232;
-$secondary-text-color: #AFAFAF;
-$light-text: #FFFFFF;
-$cta-hover-color: #000000;
-$divider-color: #e1e1e1;
-$alternative-bg-light-color: #FAFAFA;
+@use 'variables' as *;
+@use 'mixins' as *;
 
 @font-face {
     font-family: 'NunitoSans';
-    src: url(../../assets/fonts/woff2/NunitoSans-Regular.woff2) format(woff2);
+    src: url(../../assets/fonts/woff2/NunitoSans-Regular.woff2) format("woff2");
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'NunitoSans';
-    src: url(../../assets/fonts/woff2/NunitoSans-Medium.woff2) format(woff2);
+    src: url(../../assets/fonts/woff2/NunitoSans-Medium.woff2) format("woff2");
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'NunitoSans';
-    src: url(../../assets/fonts/woff2/NunitoSans-Bold.woff2) format(woff2);
+    src: url(../../assets/fonts/woff2/NunitoSans-Bold.woff2) format("woff2");
     font-weight: 700;
     font-style: normal;
-}
-
-@mixin tablet {
-    @media (min-width: $tablet) {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @media (min-width: $desktop) {
-        @content;
-    }
 }
 
 * {
@@ -54,6 +36,7 @@ h1 {
     font-size: 1.5rem;
     font-weight: 700;
     line-height: 2rem;
+    
     @include tablet {
         font-size: 3.75rem;
         line-height: 4.25rem;
@@ -64,6 +47,7 @@ h2 {
     font-size: 1.5rem;
     font-weight: 700;
     line-height: 2rem;
+    
     @include tablet {
         font-size: 2.25rem;
         line-height: 2.75rem;
@@ -74,6 +58,7 @@ h3 {
     font-size: 0.875rem;
     font-weight: 600;
     line-height: 1.375rem;
+    
     @include tablet {
         font-size: 1.5rem;
         font-weight: 500;
@@ -85,6 +70,7 @@ p {
     font-size: 0.8125rem;
     font-weight: 400;
     line-height: 1.125rem;
+    
     @include tablet {
         font-size: 0.875rem;
         font-weight: 400;
@@ -96,6 +82,7 @@ footer p {
     font-size: 0.8125rem;
     font-weight: 400;
     line-height: 1.125rem;
+    
     @include tablet {
         font-size: 0.875rem;
         font-weight: 400;
@@ -106,18 +93,4 @@ footer p {
 a {
     text-decoration: none;
     color: inherit;
-}
-
-@mixin flex-center ($direction: row, $justify: center, $align: center) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-}
-
-@mixin bandsite-logo() {
-    color: $light-text;
-    font-size: 1.5rem;
-    font-weight: 400;
-    background-color: $dark-primary-color;
 }

@@ -1,0 +1,27 @@
+@use 'variables' as *;
+
+@mixin tablet {
+    @media (min-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin flex-center ($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin bandsite-logo() {
+    color: $light-text;
+    font-size: 1.5rem;
+    font-weight: 400;
+    background-color: $bandsite-black;
+}
