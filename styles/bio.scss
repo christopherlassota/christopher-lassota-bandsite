@@ -205,7 +205,7 @@
 .footer {
     color: $light-text;
     background-color: $bandsite-black;
-    @include responsive-padding(0.1rem, 2rem, 2rem 10rem);
+    @include responsive-padding(1rem, 2rem, 2rem 10rem);
     
     &__title-box {
     
