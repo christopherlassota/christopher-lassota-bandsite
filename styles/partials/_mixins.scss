@@ -25,3 +25,13 @@
     font-weight: 400;
     background-color: $bandsite-black;
 }
+
+@mixin responsive-padding($mobile-padding, $tablet-padding, $desktop-padding) {
+    padding: $mobile-padding;
+    @include tablet {
+        padding: $tablet-padding;
+    }
+    @include desktop {
+        padding: $desktop-padding;
+    }
+}

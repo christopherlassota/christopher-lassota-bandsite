@@ -19,11 +19,7 @@
     &__title {
         @include bandsite-logo();
         text-align: center;
-        padding: 1rem 0 0 0;
-        
-        @include tablet {
-            padding: 1rem 2rem;
-        }
+        @include responsive-padding(1rem 0 0 0, 1rem 2rem, 1rem 2rem);
     }
 
     &__logo {
@@ -36,13 +32,12 @@
     }
 
     &__item {
-        padding: 0 0 1rem 0;
+        @include responsive-padding(0 0 1rem 0, 0, 0);
         width: 50%;
         text-align: center;
         
         @include tablet {
             width: 100%;
-            padding: 0;
             margin: 0 2rem;
 
         }
@@ -83,8 +78,7 @@
     background-size: cover;
     width: 100%;
     height: 35vh;
-    display: flex;
-    align-items: center;
+    @include flex-center($justify: none);
     position: relative;
     
     @include tablet {
@@ -98,13 +92,9 @@
     
     &__title {
         text-transform: capitalize;
-        padding-left: 1rem;
+        @include responsive-padding(0 0 0 1rem, 0 0 0 1rem, 0 10rem);
         color: $light-text;
         z-index: 2;
-    
-        @include desktop {
-            padding: 0 10rem;
-        }
     }
 
     &::before {
@@ -115,32 +105,16 @@
         width: 100%;
         height: 100%;
         background-color: $bandsite-black;
-        opacity: 50%;
+        opacity: 0.5;
         z-index: 1;
     }
 }
 
 .about {
-    padding: 0 1rem 1rem 1rem;
-    
-    @include tablet {
-        padding: 1rem 5rem 0 5rem;
-    }
-    
-    @include desktop {
-        padding: 1rem 15rem;
-    }
+    @include responsive-padding(0 1rem 1rem 1rem, 1rem 5rem 0 5rem, 1rem 15rem);
 
     &__title {
-        padding: 1.5rem 1rem 1rem 1rem;
-
-        @include tablet {
-            padding: 2.25rem 0 0 2rem;
-        }
-
-        @include desktop {
-            padding: 2.25rem 10rem;
-        }
+        @include responsive-padding(1.5rem 1rem 1rem 1rem, 2.25rem 0 0 2rem, 2.25rem 10rem);
     }
 
     &__image {
@@ -187,6 +161,7 @@
 
     &__history {
         padding: 1.5rem 0;
+        
         @include tablet {
             width: 48%;
         }
@@ -195,22 +170,13 @@
 
 .gallery {
     background-color: $alabaster;
-    padding: 1.5rem 1rem 0.5rem 1rem;
-
-    @include tablet {
-        padding: 2.5rem;
-    }
-    
-    @include desktop {
-        padding: 2.5rem 10rem;
-    }
+    @include responsive-padding(1.5rem 1rem 0.5rem 1rem, 2.5rem, 2.5rem 10rem );
 
     &__showcase {
     
         @include tablet {
-            display: flex;
+            @include flex-center($justify:space-between);
             flex-wrap: wrap;
-            justify-content: space-between;
         }
     }
     
@@ -239,39 +205,23 @@
 .footer {
     color: $light-text;
     background-color: $bandsite-black;
-    padding: 0 1rem;
-    
-    @include tablet {
-        padding: 2rem;
-    }
-    
-    @include desktop {
-        padding: 2rem 10rem;
-    }
+    @include responsive-padding(0.1rem, 2rem, 2rem 10rem);
     
     &__title-box {
     
         @include tablet {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            @include flex-center($justify: space-between);
             position: relative;
         }
     }
 
     &__title {
-        padding: 1.5rem 0 1rem 0;
-    
-        @include tablet {
-            padding: 0;
-        }
+        @include responsive-padding(1.5rem 0 1rem 0, 0, 0);
     }
 
     &__socials {
         width: 30%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex-center($justify: space-between);
     
         @include tablet {
             width: 20%;
@@ -307,8 +257,7 @@
     &__information {
 
         @include tablet {
-            display: flex;
-            justify-content: space-between;
+            @include flex-center($justify:space-between);
         }
 
         @include desktop {
