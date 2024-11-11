@@ -56,6 +56,10 @@
             padding: 0 0 1.5rem 0;
         }
 
+        &:hover {
+            font-weight: 700;
+        }
+
         &--highlight {
             @include tablet {
             border-bottom: 0.25rem solid $light-text;
@@ -190,6 +194,7 @@
     &__image {
         width: 100%;
         margin: 0.5rem 0;
+        filter: grayscale(100%);
         @include tablet {
             flex: 0 0 32%;
             width: 18vw;
@@ -197,6 +202,10 @@
                 flex: 0 0 32%;
                 width: 24vw;
             }
+        }
+
+        &:hover {
+            filter: grayscale(0%);
         }
     }
 }

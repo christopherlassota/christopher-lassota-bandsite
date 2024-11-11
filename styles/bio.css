@@ -91,6 +91,7 @@ footer p {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 .header {
@@ -160,6 +161,9 @@ a {
   .header__link {
     padding: 0 0 1.5rem 0;
   }
+}
+.header__link:hover {
+  font-weight: 700;
 }
 @media (min-width: 867px) {
   .header__link--highlight {
@@ -305,6 +309,7 @@ a {
 .gallery__image {
   width: 100%;
   margin: 0.5rem 0;
+  filter: grayscale(100%);
 }
 @media (min-width: 867px) {
   .gallery__image {
@@ -317,6 +322,9 @@ a {
     flex: 0 0 32%;
     width: 24vw;
   }
+}
+.gallery__image:hover {
+  filter: grayscale(0%);
 }
 
 .footer {
