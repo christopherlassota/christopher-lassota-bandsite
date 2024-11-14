@@ -1,0 +1,258 @@
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+@use './partials/global' as *;
+
+.header {
+    background-color: $bandsite-black;
+    
+    &__nav {
+        
+        @include tablet {
+            @include flex-center(row, flex-start);
+        }
+
+        @include desktop {
+            padding: 0 8rem;
+        }
+    }
+    
+    &__title {
+        @include bandsite-logo();
+        text-align: center;
+        @include responsive-padding(1rem 0 0 0, 1rem 2rem, 1rem 2rem);
+    }
+
+    &__logo {
+        color: inherit;
+    }
+
+    &__list {
+        list-style-type: none;
+        @include flex-center(row, space-around);
+    }
+
+    &__item {
+        @include responsive-padding(0 0 1rem 0, 0, 0);
+        width: 50%;
+        text-align: center;
+        
+        @include tablet {
+            width: 100%;
+            margin: 0 2rem;
+
+        }
+
+        &--highlight {
+            border-bottom: 0.25rem solid $light-text;
+            font-weight: 700;
+            
+            @include tablet {
+                border-bottom: none;
+            }
+        }
+    }
+
+    &__link {
+        color: $light-text;
+        
+        @include tablet {
+            padding: 0 0 1.5rem 0;
+        }
+
+        &:hover {
+            font-weight: 700;
+        }
+
+        &--highlight {
+            
+            @include tablet {
+            border-bottom: 0.25rem solid $light-text;
+            }
+        }
+    }
+}
+
+.shows {
+    &__title {
+    @include responsive-padding(2rem 1rem 0 1rem, 1rem 5rem 0 5rem, 1rem 15rem);
+
+    }
+
+    &__card {
+        padding: 1rem;
+        border-bottom: 1px solid $mercury;
+    }
+
+    &__list {
+        list-style-type: none;
+    }
+
+    &__subtitle {
+        font-size: 0.8125rem;
+        color: $silver;
+    }
+    
+    &__information {
+        
+        &--bold {
+            font-weight: 700;
+        }
+    }
+
+    &__button {
+        display: inline-block;
+        color: $light-text;
+        background-color: $bandsite-black;
+        width: 100%;
+        margin: 1rem 0 0 0;
+        padding: 1rem;
+        border-radius: 4px;
+        box-shadow: none;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 700;
+        outline: none;
+    }
+}
+
+.hero {
+    background-image: url(../assets/images/hero-shows.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 35vh;
+    @include flex-center($justify: none);
+    position: relative;
+    
+    @include tablet {
+        height: 60vh;
+    }
+
+    @include desktop {
+        height: 90vh;
+    }
+
+    
+    &__title {
+        text-transform: capitalize;
+        @include responsive-padding(0 0 0 1rem, 0 0 0 1rem, 0 10rem);
+        color: $light-text;
+        z-index: 2;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $bandsite-black;
+        opacity: 0.5;
+        z-index: 1;
+    }
+}
+
+
+
+.footer {
+    color: $light-text;
+    background-color: $bandsite-black;
+    @include responsive-padding(1rem, 2rem, 2rem 10rem);
+    
+    &__title-box {
+    
+        @include tablet {
+            @include flex-center($justify: space-between);
+            position: relative;
+        }
+    }
+
+    &__title {
+        @include responsive-padding(1.5rem 0 1rem 0, 0, 0);
+    }
+
+    &__socials {
+        width: 30%;
+        @include flex-center($justify: space-between);
+    
+        @include tablet {
+            width: 20%;
+            position: absolute;
+            left: 38%;
+        }
+
+        @include desktop {
+            width: 15%;
+            left: 28%;
+        }
+    }
+
+    &__logo {
+        display: none;
+
+        @include tablet {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+    }
+    
+    &__icon {
+
+        @include tablet {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+
+
+    &__information {
+
+        @include tablet {
+            @include flex-center($justify:space-between);
+        }
+
+        @include desktop {
+            justify-content: flex-start;
+        }
+    }
+
+    &__card {
+
+        @include desktop {
+            width: 28%
+        }
+    }
+    
+    &__subtitle {
+        padding: 1.5rem 0 0 0;
+
+        @include tablet {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+    }
+    
+    &__text {
+        padding: 1rem 0 0 0;
+        width: 39%;
+
+        @include tablet {
+            width: 65%;
+        }
+    }
+    
+    &__copyright {
+        padding: 1.5rem 0;
+    }
+    
+    &__name {
+        padding: 1rem 0 0 0;
+        @include bandsite-logo();
+
+        @include tablet {
+            display: none;
+        }
+    }
+}
