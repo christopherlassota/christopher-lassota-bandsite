@@ -39,7 +39,6 @@
         @include tablet {
             width: 100%;
             margin: 0 2rem;
-
         }
 
         &--highlight {
@@ -70,6 +69,60 @@
             }
         }
     }
+}
+
+
+.hero {
+    background-image: url(../assets/images/hero-shows.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 35vh;
+    @include flex-center(column, center, flex-start);
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $bandsite-black;
+        opacity: 0.5;
+        z-index: 1;
+    }
+    
+    @include tablet {
+        height: 60vh;
+    }
+
+    @include desktop {
+        height: 90vh;
+    }
+    
+    &__title {
+        @include responsive-padding(0 0 0 1rem, 0 0 0 1rem, 0 10rem);
+        color: $light-text;
+        font-size: 1rem;
+        font-weight: 400;
+        z-index: 2;
+    }
+
+    &__album {
+        text-transform: capitalize;
+        @include responsive-padding(0 0 0 1rem, 0 0 0 1rem, 0 10rem);
+        color: $light-text;
+        z-index: 2;
+    }
+
+    &__iframe {
+        @include responsive-padding(1rem, 0 0 0 1rem, 0 10rem);
+        width: 100%;
+        height: 50%;
+        z-index: 2;
+    }
+
 }
 
 .shows {
@@ -115,59 +168,19 @@
     }
 }
 
-.hero {
-    background-image: url(../assets/images/hero-shows.jpg);
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: 35vh;
-    @include flex-center($justify: none);
-    position: relative;
-    
-    @include tablet {
-        height: 60vh;
-    }
-
-    @include desktop {
-        height: 90vh;
-    }
-
-    
-    &__title {
-        text-transform: capitalize;
-        @include responsive-padding(0 0 0 1rem, 0 0 0 1rem, 0 10rem);
-        color: $light-text;
-        z-index: 2;
-    }
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: $bandsite-black;
-        opacity: 0.5;
-        z-index: 1;
-    }
-}
-
-
-
 .footer {
     color: $light-text;
     background-color: $bandsite-black;
     @include responsive-padding(1rem, 2rem, 2rem 10rem);
     
     &__title-box {
-    
+        
         @include tablet {
             @include flex-center($justify: space-between);
             position: relative;
         }
     }
-
+    
     &__title {
         @include responsive-padding(1.5rem 0 1rem 0, 0, 0);
     }
