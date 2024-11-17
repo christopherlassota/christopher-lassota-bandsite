@@ -16,40 +16,67 @@ let commentData = [
     },
 ]
 
-let commentSection = document.querySelector('.comment');
+let commentSection = document.querySelector('.comment__gallery');
 
-for (let i = 0; i < commentData.length; i++) {
-    let comment = commentData[i];
+let renderComments = () => {
 
-    let commentCard = document.createElement('article');
-    commentCard.classList.add('comment__card')
-    commentSection.appendChild(commentCard)
+    commentSection.innerHTML = '';
 
-    let commentPicture = document.createElement('div');
-    commentPicture.classList.add('comment__profile-picture');
-    commentCard.appendChild(commentPicture);
+    for (let i = 0; i < commentData.length; i++) {
+        let comment = commentData[i];
 
-    let commentContent = document.createElement('div');
-    commentContent.classList.add('comment__content');
-    commentCard.appendChild(commentContent);
+        let commentCard = document.createElement('article');
+        commentCard.classList.add('comment__card')
+        commentSection.appendChild(commentCard)
 
-    let commentHeader = document.createElement('ul');
-    commentHeader.classList.add('comment__header');
-    commentContent.appendChild(commentHeader);
+        let commentPicture = document.createElement('div');
+        commentPicture.classList.add('comment__profile-picture');
+        commentCard.appendChild(commentPicture);
 
-    let commentName = document.createElement('li');
-    commentName.classList.add('comment__name');
-    commentName.innerText = comment.name;
-    commentHeader.appendChild(commentName);
-    
-    let commentDate = document.createElement('li');
-    commentDate.classList.add('comment__date');
-    commentDate.innerText = comment.date;
-    commentHeader.appendChild(commentDate);
+        let commentContent = document.createElement('div');
+        commentContent.classList.add('comment__content');
+        commentCard.appendChild(commentContent);
 
-    let commentText = document.createElement('p');
-    commentText.classList.add('comment__text');
-    commentText.innerText = comment.comment;
-    commentContent.appendChild(commentText)
+        let commentHeader = document.createElement('ul');
+        commentHeader.classList.add('comment__header');
+        commentContent.appendChild(commentHeader);
+
+        let commentName = document.createElement('li');
+        commentName.classList.add('comment__name');
+        commentName.innerText = comment.name;
+        commentHeader.appendChild(commentName);
+        
+        let commentDate = document.createElement('li');
+        commentDate.classList.add('comment__date');
+        commentDate.innerText = comment.date;
+        commentHeader.appendChild(commentDate);
+
+        let commentText = document.createElement('p');
+        commentText.classList.add('comment__text');
+        commentText.innerText = comment.comment;
+        commentContent.appendChild(commentText)
+    }
 }
 
+let handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    const nameInput = event.target.name.value;
+    const commentInput = event.target.comment.value;
+    let today = new Date().toLocaleDateString();
+
+    const newComment = {
+        name: nameInput,
+        date: today,
+        comment: commentInput,
+    }
+
+    commentData.unshift(newComment);
+    renderComments()
+    event.target.reset();
+}
+
+let form = document.querySelector('.comment__form');
+form.addEventListener("submit", handleFormSubmit);
+
+renderComments();
