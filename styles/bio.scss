@@ -201,6 +201,116 @@
     }
 }
 
+.comment {
+    @include responsive-padding(1rem, 1rem 5rem 0 5rem, 1rem 15rem);
+
+    &__title {
+        padding: 0 0 1rem 0;
+    }
+
+    &__form-field {
+        @include flex-center(row,space-between,flex-start);
+        border-bottom: 2px solid $mercury;
+        padding: 0 0 1rem 0;
+    }
+
+    &__profile-picture {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: $mercury;
+
+        &--user {
+            background-image: url(../assets/images/Mohan-muruge.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        
+    }
+
+    &__form {
+        width: 80%;
+    }
+
+    &__label {
+        color: $silver;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    &__input {
+        min-height: 36px;
+        width: 100%;
+        border: 1px solid $mercury;
+        background-color: $alabaster;
+        border-radius: 4px;
+
+        &::placeholder {
+            font-family: 'NunitoSans';
+            color: $bandsite-black;
+            padding: 0 1rem;
+        }
+
+    }
+
+    &__textarea {
+        width: 100%;
+        height: 15vh;
+        border: 1px solid $mercury;
+        background-color: $alabaster;
+        border-radius: 4px;
+
+        &::placeholder {
+            font-family: 'NunitoSans';
+            color: $bandsite-black;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+        }
+    }
+
+    &__button {
+        display: inline-block;
+        color: $light-text;
+        background-color: $bandsite-black;
+        width: 100%;
+        margin: 1rem 0 0 0;
+        padding: 1rem;
+        border-radius: 4px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 700;
+        border: none;
+    }
+
+    &__card {
+        @include flex-center(row, space-between, flex-start);
+        @include responsive-padding(1rem, 1rem, 1rem);
+        border-bottom: 2px solid $mercury;
+    }
+
+    &__content {
+        width: 80%;
+
+    }
+
+    &__header {
+        list-style-type: none;
+        @include flex-center($justify: space-between);
+    }
+
+    &__name {
+        font-weight: 700;
+    }
+
+    &__date {
+        color: $silver;
+    }
+
+    &__text {
+        padding: 1rem 0 0 0;
+    }
+}
 
 .footer {
     color: $light-text;

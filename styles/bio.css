@@ -350,6 +350,137 @@ a {
   filter: grayscale(0%);
 }
 
+.comment {
+  padding: 1rem;
+}
+@media (min-width: 867px) {
+  .comment {
+    padding: 1rem 5rem 0 5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comment {
+    padding: 1rem 15rem;
+  }
+}
+.comment__title {
+  padding: 0 0 1rem 0;
+}
+.comment__form-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid #e1e1e1;
+  padding: 0 0 1rem 0;
+}
+.comment__profile-picture {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e1e1e1;
+}
+.comment__profile-picture--user {
+  background-image: url(../assets/images/Mohan-muruge.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.comment__form {
+  width: 80%;
+}
+.comment__label {
+  color: #AFAFAF;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.comment__input {
+  min-height: 36px;
+  width: 100%;
+  border: 1px solid #e1e1e1;
+  background-color: #FAFAFA;
+  border-radius: 4px;
+}
+.comment__input::-moz-placeholder {
+  font-family: "NunitoSans";
+  color: #323232;
+  padding: 0 1rem;
+}
+.comment__input::placeholder {
+  font-family: "NunitoSans";
+  color: #323232;
+  padding: 0 1rem;
+}
+.comment__textarea {
+  width: 100%;
+  height: 15vh;
+  border: 1px solid #e1e1e1;
+  background-color: #FAFAFA;
+  border-radius: 4px;
+}
+.comment__textarea::-moz-placeholder {
+  font-family: "NunitoSans";
+  color: #323232;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+.comment__textarea::placeholder {
+  font-family: "NunitoSans";
+  color: #323232;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+.comment__button {
+  display: inline-block;
+  color: #FFFFFF;
+  background-color: #323232;
+  width: 100%;
+  margin: 1rem 0 0 0;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+}
+.comment__card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+  border-bottom: 2px solid #e1e1e1;
+}
+@media (min-width: 867px) {
+  .comment__card {
+    padding: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comment__card {
+    padding: 1rem;
+  }
+}
+.comment__content {
+  width: 80%;
+}
+.comment__header {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.comment__name {
+  font-weight: 700;
+}
+.comment__date {
+  color: #AFAFAF;
+}
+.comment__text {
+  padding: 1rem 0 0 0;
+}
+
 .footer {
   color: #FFFFFF;
   background-color: #323232;
