@@ -355,12 +355,12 @@ a {
 }
 @media (min-width: 867px) {
   .comment {
-    padding: 2rem 10rem;
+    padding: 1rem 5rem 0 5rem;
   }
 }
 @media (min-width: 1280px) {
   .comment {
-    padding: 1rem 15rem;
+    padding: 1rem 22rem;
   }
 }
 .comment__title {
@@ -394,7 +394,7 @@ a {
   .comment__profile-picture {
     width: 48px;
     height: 48px;
-    margin: 0 1rem;
+    margin: 1rem;
   }
 }
 .comment__profile-picture--user {
@@ -403,7 +403,7 @@ a {
   background-size: cover;
 }
 .comment__form {
-  width: 80%;
+  width: 90%;
   display: relative;
 }
 .comment__label {
@@ -489,7 +489,7 @@ a {
   }
 }
 .comment__content {
-  width: 80%;
+  width: 90%;
 }
 .comment__header {
   list-style-type: none;

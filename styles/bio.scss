@@ -202,7 +202,7 @@
 }
 
 .comment {
-    @include responsive-padding(1rem, 2rem 10rem, 1rem 15rem);
+    @include responsive-padding(1rem, 1rem 5rem 0 5rem, 1rem 22rem);
 
 
     &__title {
@@ -213,10 +213,6 @@
         @include flex-center(row,space-between,flex-start);
         border-bottom: 2px solid $mercury;
         padding: 0 0 1rem 0;
-
-        // @include tablet {
-        //     @include flex-center(row, flex-end, flex-start);
-        // }
     }
 
     &__profile-picture {
@@ -228,7 +224,7 @@
         @include tablet {
             width: 48px;
             height: 48px;
-            margin: 0 1rem;
+            margin: 1rem;
         }
 
         &--user {
@@ -240,7 +236,7 @@
     }
 
     &__form {
-        width: 80%;
+        width: 90%;
         display: relative;
     }
 
@@ -314,7 +310,7 @@
     }
 
     &__content {
-        width: 80%;
+        width: 90%;
 
     }
 
