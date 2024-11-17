@@ -92,7 +92,7 @@
     
     &__title {
         text-transform: capitalize;
-        @include responsive-padding(0 0 0 1rem, 0 0 0 1rem, 0 10rem);
+        @include responsive-padding(0 0 0 1rem, 0 0 0 2rem, 0 10rem);
         color: $light-text;
         z-index: 2;
     }
@@ -202,16 +202,21 @@
 }
 
 .comment {
-    @include responsive-padding(1rem, 1rem 5rem 0 5rem, 1rem 15rem);
+    @include responsive-padding(1rem, 2rem 10rem, 1rem 15rem);
+
 
     &__title {
-        padding: 0 0 1rem 0;
+        @include responsive-padding(1rem, 2rem 2rem 0 2rem, 2.25rem 10rem);
     }
 
     &__form-field {
         @include flex-center(row,space-between,flex-start);
         border-bottom: 2px solid $mercury;
         padding: 0 0 1rem 0;
+
+        // @include tablet {
+        //     @include flex-center(row, flex-end, flex-start);
+        // }
     }
 
     &__profile-picture {
@@ -219,6 +224,12 @@
         height: 36px;
         border-radius: 50%;
         background-color: $mercury;
+
+        @include tablet {
+            width: 48px;
+            height: 48px;
+            margin: 0 1rem;
+        }
 
         &--user {
             background-image: url(../assets/images/Mohan-muruge.jpg);
@@ -230,6 +241,7 @@
 
     &__form {
         width: 80%;
+        display: relative;
     }
 
     &__label {
@@ -244,6 +256,7 @@
         border: 1px solid $mercury;
         background-color: $alabaster;
         border-radius: 4px;
+        margin-bottom: 1rem;
 
         &::placeholder {
             font-family: 'NunitoSans';
@@ -258,6 +271,7 @@
         height: 15vh;
         border: 1px solid $mercury;
         background-color: $alabaster;
+        margin-bottom: 1rem;
         border-radius: 4px;
 
         &::placeholder {
@@ -281,12 +295,22 @@
         font-size: 1rem;
         font-weight: 700;
         border: none;
+
+        @include tablet {
+            width: 30%;
+            position: relative;
+            left: 70%;
+        }
     }
 
     &__card {
         @include flex-center(row, space-between, flex-start);
         @include responsive-padding(1rem, 1rem, 1rem);
         border-bottom: 2px solid $mercury;
+
+        // @include tablet {
+        //     @include flex-center(row, flex-end, flex-start);
+        // }
     }
 
     &__content {

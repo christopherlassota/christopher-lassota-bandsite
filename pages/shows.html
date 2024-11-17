@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/shows.css">
+    <script src="../scripts/build-shows-page.js" defer></script>
     <title>Bandsite - Shows</title>
 </head>
 
@@ -11,7 +12,7 @@
     <header class="header">
         <nav class="header__nav">
             <h2 class="header__title">
-                <a href="./index.html" class="header__logo">BANDSITE</a>
+                <a href="../index.html" class="header__logo">BANDSITE</a>
             </h2>
                 <ul class="header__list">
                 <li class="header__item">
@@ -26,74 +27,17 @@
             <iframe class="hero__iframe" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/139428697&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
         </section>
     </header>
-
+    
     <main>
-        <section class="shows">
+        <section class="shows" id="shows">
             <h2 class="shows__title">Shows</h2>
-            <div class="shows__table">
+            <div class="shows__gallery">
                 <ul class="shows__header">
                     <li class="shows__labels">Date</li>
                     <li class="shows__labels">Venue</li>
                     <li class="shows__labels">Location</li>
                     <li class="shows__labels"></li>
                 </ul>
-                <article class="shows__card">
-                    <ul class="shows__list">
-                        <li class="shows__item">
-                            <h3 class="shows__subtitle">Date</h3>
-                            <p class="shows__information shows__information--bold">Mon Sept 09 2024</p>
-                        </li>
-                        <li class="shows__item">
-                            <h3 class="shows__subtitle">Venue</h3>
-                            <p class="shows__information">Ronald Lane</p>
-                        </li>
-                        <li class="shows__item">
-                            <h3 class="shows__subtitle">Location</h3>
-                            <p class="shows__information">San Francisco, CA</p>
-                        </li>
-                        <li class="shows__item">
-                            <a class="shows__button">BUY TICKETS</a>
-                        </li>
-                    </ul>
-                </article>
-                <article class="shows__card">
-                    <ul class="shows__list">
-                        <li class="shows__item">
-                            <h3 class="shows__subtitle">Date</h3>
-                            <p class="shows__information shows__information--bold">Mon Sept 09 2024</p>
-                        </li>
-                        <li class="shows__item">
-                            <h3 class="shows__subtitle">Venue</h3>
-                            <p class="shows__information">Ronald Lane</p>
-                        </li>
-                        <li class="shows__item">
-                            <h3 class="shows__subtitle">Location</h3>
-                            <p class="shows__information">San Francisco, CA</p>
-                        </li>
-                        <li class="shows__item">
-                            <a class="shows__button">BUY TICKETS</a>
-                        </li>
-                    </ul>
-                </article>
-                <article class="shows__card">
-                    <ul class="shows__list">
-                        <li class="shows__item">
-                            <h3 class="shows__subtitle">Date</h3>
-                            <p class="shows__information shows__information--bold">Mon Sept 09 2024</p>
-                        </li>
-                        <li class="shows__item">
-                            <h3 class="shows__subtitle">Venue</h3>
-                            <p class="shows__information">Ronald Lane</p>
-                        </li>
-                        <li class="shows__item">
-                            <h3 class="shows__subtitle">Location</h3>
-                            <p class="shows__information">San Francisco, CA</p>
-                        </li>
-                        <li class="shows__item">
-                            <a class="shows__button">BUY TICKETS</a>
-                        </li>
-                    </ul>
-                </article>
             </div>
         </section>
     </main>

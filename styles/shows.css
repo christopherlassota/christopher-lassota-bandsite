@@ -306,12 +306,12 @@ a {
 }
 @media (min-width: 867px) {
   .shows__title {
-    padding: 2rem 2rem;
+    padding: 2rem;
   }
 }
 @media (min-width: 1280px) {
   .shows__title {
-    padding: 0 0 0 0;
+    padding: 0;
   }
 }
 .shows__header {
@@ -337,7 +337,7 @@ a {
   }
 }
 @media (min-width: 1280px) {
-  .shows__table {
+  .shows__gallery {
     width: 70%;
   }
 }
@@ -362,7 +362,7 @@ a {
   .shows__list {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
   }
 }
@@ -394,7 +394,7 @@ a {
 }
 @media (min-width: 867px) {
   .shows__button {
-    width: 100%;
+    width: 25%;
     padding: 1rem 2rem;
     margin: 0;
   }
