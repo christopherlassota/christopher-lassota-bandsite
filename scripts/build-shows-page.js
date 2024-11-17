@@ -31,14 +31,47 @@ let showsData = [
     },
 ];
 
-let showsSection = document.querySelector('.shows__gallery');
+let mainSection = document.querySelector('.main');
+
+let showsSection = document.createElement('section');
+showsSection.classList.add('shows');
+mainSection.appendChild(showsSection);
+
+let showsTitle = document.createElement('h2');
+showsTitle.classList.add('shows__title');
+showsTitle.innerText = 'Shows';
+showsSection.appendChild(showsTitle);
+
+let showsGallery = document.createElement('div');
+showsGallery.classList.add('shows__gallery');
+showsSection.appendChild(showsGallery)
+
+showsHeader = document.createElement('ul');
+showsHeader.classList.add('shows__header');
+showsGallery.appendChild(showsHeader);
+
+dateLabel = document.createElement('li');
+dateLabel.classList.add('shows__labels');
+dateLabel.innerText = 'Date'
+showsHeader.appendChild(dateLabel)
+
+venueLabel = document.createElement('li');
+venueLabel.classList.add('shows__labels');
+venueLabel.innerText = 'Venue'
+showsHeader.appendChild(venueLabel)
+
+locationLabel = document.createElement('li');
+locationLabel.classList.add('shows__labels');
+locationLabel.innerText = 'Location'
+showsHeader.appendChild(locationLabel)
+
 
 for (let i = 0; i < showsData.length; i++) {
     let show = showsData[i];
     
     let showsCard = document.createElement('article');
     showsCard.classList.add("shows__card");
-    showsSection.appendChild(showsCard)
+    showsGallery.appendChild(showsCard)
 
     let showsList = document.createElement('ul');
     showsList.classList.add('shows__list');
@@ -89,6 +122,6 @@ for (let i = 0; i < showsData.length; i++) {
     
     let showsButton = document.createElement('a');
     showsButton.classList.add('shows__button');
-    showsButton.innerHTML = 'COMMENT';
+    showsButton.innerHTML = 'BUY TICKETS';
     showsList.appendChild(showsButton);
 }
