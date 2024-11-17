@@ -165,8 +165,8 @@
         font-size: 14px;
 
         @include tablet {
-            @include flex-center($justify: space-around);
-            padding: 0 4rem;
+            @include flex-center($justify: flex-start);
+            padding: 0 2rem;
         }
 
         @include desktop {
@@ -197,6 +197,14 @@
             margin: 0 1rem;
         }
 
+        &:hover {
+            background-color: $alabaster;
+        }
+
+        &:active {
+            background-color: $mercury;
+        }
+
     }
 
     &__list {
@@ -204,6 +212,13 @@
 
         @include tablet {
             @include flex-center($justify: space-between)
+        }
+    }
+
+    &__item {
+
+        @include tablet {
+            width: 25%;
         }
     }
 
@@ -217,7 +232,7 @@
     }
     
     &__information {
-        
+
         &--bold {
             font-weight: 700;
         }
