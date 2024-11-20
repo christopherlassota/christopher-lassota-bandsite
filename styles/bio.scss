@@ -18,7 +18,7 @@
     }
     
     &__title {
-        @include bandsite-logo();
+        @include bandsite-logo;
         text-align: center;
         @include responsive-padding(1rem 0 0 0, 1rem 2rem, 1rem 2rem);
     }
@@ -437,7 +437,7 @@
     
     &__name {
         padding: 1rem 0 0 0;
-        @include bandsite-logo();
+        @include bandsite-logo;
 
         @include tablet {
             display: none;
