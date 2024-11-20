@@ -1,27 +1,6 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-@font-face {
-    font-family: 'NunitoSans';
-    src: url(../../assets/fonts/woff2/NunitoSans-Regular.woff2) format("woff2");
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'NunitoSans';
-    src: url(../../assets/fonts/woff2/NunitoSans-Medium.woff2) format("woff2");
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'NunitoSans';
-    src: url(../../assets/fonts/woff2/NunitoSans-Bold.woff2) format("woff2");
-    font-weight: 700;
-    font-style: normal;
-}
-
 * {
     margin: 0;
     padding: 0;
