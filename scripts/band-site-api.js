@@ -22,7 +22,7 @@ export class bandSiteApi {
 			const response = await axios.get(`${this.baseUrl}comments?api_key=${this.apiKey}`);
 			const comments = response.data
 			comments.sort((a,b) => b.timestamp - a.timestamp);
-			console.log("comments retrieved")
+			console.log("Comments retrieved")
 			return comments
 		} catch (error) {
 			console.log("Error getting comments:", error)
