@@ -340,6 +340,16 @@
     &__text {
         padding: 1rem 0 0 0;
     }
+
+    &__like {
+        background-color: $bandsite-black;
+        width: 100%;
+        height: 16px;
+
+        &:active {
+            background-color:  red;
+        }
+    }
 }
 
 .footer {

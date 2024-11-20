@@ -1,6 +1,6 @@
 // Import API class and initialize with API key
 import { bandSiteApi } from "./band-site-api.js";
-const API_KEY = `78283900-cd8f-44d2-bda7-25ec1cba590c`
+const API_KEY = `4ae0307a-ef25-454d-97e1-83776bd8b6a1`
 const api = new bandSiteApi(API_KEY);
 
 // Get comments from API
@@ -23,33 +23,33 @@ let renderComments = () => {
         let comment = commentData[i];
 
         // Create card element
-        let commentCard = document.createElement('article');
+        const commentCard = document.createElement('article');
         commentCard.classList.add('comment__card')
         commentSection.appendChild(commentCard)
 
         // Create profile picture placeholder
-        let commentPicture = document.createElement('div');
+        const commentPicture = document.createElement('div');
         commentPicture.classList.add('comment__profile-picture');
         commentCard.appendChild(commentPicture);
 
         // Create container for comment content (header & text)
-        let commentContent = document.createElement('div');
+        const commentContent = document.createElement('div');
         commentContent.classList.add('comment__content');
         commentCard.appendChild(commentContent);
 
         // Create comment header (name and date)
-        let commentHeader = document.createElement('ul');
+        const commentHeader = document.createElement('ul');
         commentHeader.classList.add('comment__header');
         commentContent.appendChild(commentHeader);
 
         // Add commenter's name
-        let commentName = document.createElement('li');
+        const commentName = document.createElement('li');
         commentName.classList.add('comment__name');
         commentName.innerText = comment.name;
         commentHeader.appendChild(commentName);
 
         // Add date of comment
-        let commentDate = document.createElement('li');
+        const commentDate = document.createElement('li');
         commentDate.classList.add('comment__date');
 
         // Convert timestamp to local date
@@ -58,10 +58,18 @@ let renderComments = () => {
         commentHeader.appendChild(commentDate);
 
         // Add comment text
-        let commentText = document.createElement('p');
+        const commentText = document.createElement('p');
         commentText.classList.add('comment__text');
         commentText.innerText = comment.comment;
         commentContent.appendChild(commentText)
+
+        // Create like button
+        const likeButton = document.createElement('div');
+        likeButton.classList.add('comment__like');
+        likeButton.setAttribute('id', commentData[i].id)
+        commentContent.appendChild(likeButton);
+        likeButton.addEventListener("click", handleLikeSubmit)
+
     }
 }
 
@@ -97,6 +105,29 @@ let handleFormSubmit = async (event) => {
 // Attach form submission handler to form
 let form = document.querySelector('.comment__form');
 form.addEventListener("submit", handleFormSubmit);
+
+/**Event handler for like button
+ * Prevents deafault form behavious,
+ * gets specifio comment ID
+ * refetces comments then re-renders comment section
+ */
+let handleLikeSubmit = async (event) => {
+
+    try {
+        const likeButton = event.target;
+        const commentId = likeButton.id
+        console.log(`Like button pressed for ${commentId}`)
+    
+        await api.putLike(commentId);
+        await api.getComments();
+    
+        renderComments();
+    } catch(error) {
+        console.log("Error liking comment:", error);
+    }
+}
+
+const likeButton = document.querySelector('.comment__like')
 
 // Initial render of comments
 renderComments();

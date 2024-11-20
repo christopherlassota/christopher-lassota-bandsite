@@ -45,4 +45,16 @@ export class bandSiteApi {
 			console.log("Error getting showdates:", error)
 		}
 	}
+
+	// Add a like to a comment
+	putLike = async (commentId) => {
+		try {
+			const response = await axios.put(`${this.baseUrl}comments/${commentId}/like?api_key=${this.apiKey}`, {});
+			console.log(`Comment ${commentId} updated`)
+			const like = response;
+			return like;
+		} catch (error) {
+			console.log("Error putting like:", error)
+		}
+	}
 }

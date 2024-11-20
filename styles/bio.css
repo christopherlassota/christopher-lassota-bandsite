@@ -536,6 +536,14 @@ a {
 .comment__text {
   padding: 1rem 0 0 0;
 }
+.comment__like {
+  background-color: #323232;
+  width: 100%;
+  height: 16px;
+}
+.comment__like:active {
+  background-color: red;
+}
 
 .footer {
   color: #FFFFFF;
