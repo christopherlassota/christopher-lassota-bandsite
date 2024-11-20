@@ -51,7 +51,8 @@ let renderComments = () => {
         // Add date of comment
         let commentDate = document.createElement('li');
         commentDate.classList.add('comment__date');
-        // convert timestamp to local date
+
+        // Convert timestamp to local date
         const date = new Date(comment.timestamp)
         commentDate.innerText = date.toLocaleDateString(); // i.e. 11/19/2024
         commentHeader.appendChild(commentDate);
