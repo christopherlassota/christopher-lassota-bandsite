@@ -1,17 +1,20 @@
 @use 'variables' as *;
 
+// Mixin tablet size media query 
 @mixin tablet {
     @media (min-width: $tablet) {
         @content;
     }
 }
 
+// Mixin desktop size media query
 @mixin desktop {
     @media (min-width: $desktop) {
         @content;
     }
 }
 
+// Common flex box settings
 @mixin flex-center ($direction: row, $justify: center, $align: center) {
     display: flex;
     flex-direction: $direction;
@@ -19,6 +22,7 @@
     align-items: $align;
 }
 
+// Bandsite logo setings
 @mixin bandsite-logo() {
     color: $light-text;
     font-size: 1.5rem;
@@ -26,6 +30,7 @@
     background-color: $bandsite-black;
 }
 
+// Responsive padding for media queries
 @mixin responsive-padding($mobile-padding, $tablet-padding, $desktop-padding) {
     padding: $mobile-padding;
     @include tablet {
