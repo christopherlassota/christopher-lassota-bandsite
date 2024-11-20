@@ -258,7 +258,7 @@ a {
 }
 @media (min-width: 1280px) {
   .hero__album {
-    width: 870px;
+    width: 54.375rem;
   }
 }
 .hero__iframe {
@@ -279,7 +279,7 @@ a {
 }
 @media (min-width: 867px) {
   .hero__iframe {
-    width: 450px;
+    width: 28.125rem;
     height: auto;
   }
 }
@@ -320,7 +320,7 @@ a {
   color: #AFAFAF;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 @media (min-width: 867px) {
   .shows__header {
@@ -348,7 +348,7 @@ a {
 }
 .shows__card {
   padding: 1rem;
-  border-bottom: 2px solid #e1e1e1;
+  border-bottom: 0.125rem solid #e1e1e1;
 }
 @media (min-width: 867px) {
   .shows__card {
@@ -396,7 +396,7 @@ a {
   width: 100%;
   margin: 1rem 0 0 0;
   padding: 1rem;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   box-shadow: none;
   text-align: center;
   font-size: 1rem;
