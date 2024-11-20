@@ -1,36 +1,3 @@
-let showsData = [
-    {
-        date: "Mon Sept 09 2024",
-        venue: "Ronald Lane",
-        location: "San Francisco, CA",
-    },
-    {
-        date: "Tue Sept 17 2024",
-        venue: "Pier 3 East",
-        location: "San Francisco, CA",
-    },
-    {
-        date: "Sat Oct 12 2024",
-        venue: "View Lounge",
-        location: "San Francisco, CA",
-    },
-    {
-        date: "Sat Nov 16 2024 ",
-        venue: "Hyatt Agency",
-        location: "San Francisco, CA",
-    },
-    {
-        date: "Fri Nov 29 2024",
-        venue: "Moscow Center",
-        location: "San Francisco, CA",
-    },
-    {
-        date: "Wed Dec 18 2024 ",
-        venue: "Press Club",
-        location: "San Francisco, CA",
-    },
-];
-
 let mainSection = document.querySelector('.main');
 
 let showsSection = document.createElement('section');
@@ -46,24 +13,33 @@ let showsGallery = document.createElement('div');
 showsGallery.classList.add('shows__gallery');
 showsSection.appendChild(showsGallery)
 
-showsHeader = document.createElement('ul');
+let showsHeader = document.createElement('ul');
 showsHeader.classList.add('shows__header');
 showsGallery.appendChild(showsHeader);
 
-dateLabel = document.createElement('li');
+let dateLabel = document.createElement('li');
 dateLabel.classList.add('shows__labels');
 dateLabel.innerText = 'Date'
 showsHeader.appendChild(dateLabel)
 
-venueLabel = document.createElement('li');
+let venueLabel = document.createElement('li');
 venueLabel.classList.add('shows__labels');
 venueLabel.innerText = 'Venue'
 showsHeader.appendChild(venueLabel)
 
-locationLabel = document.createElement('li');
+let locationLabel = document.createElement('li');
 locationLabel.classList.add('shows__labels');
 locationLabel.innerText = 'Location'
 showsHeader.appendChild(locationLabel)
+
+// Import API class and initialize with API key
+import { bandSiteApi } from "./band-site-api.js";
+const API_KEY = `78283900-cd8f-44d2-bda7-25ec1cba590c`
+const api = new bandSiteApi(API_KEY);
+
+// Get show dates from API
+let showsData = await api.getShowDates();
+console.log(showsData)
 
 
 for (let i = 0; i < showsData.length; i++) {
@@ -89,22 +65,24 @@ for (let i = 0; i < showsData.length; i++) {
     let dateText = document.createElement('p');
     dateText.classList.add('shows__information');
     dateText.classList.add('shows__information--bold');
-    dateText.innerText = show.date;
+
+    let showDate = new Date(show.date)
+    dateText.innerText = showDate.toLocaleDateString();
     dateInformation.appendChild(dateText);
     
-    let venueInformation = document.createElement('li');
-    venueInformation.classList.add('shows__item');
-    showsList.appendChild(venueInformation);
+    let placeInformation = document.createElement('li');
+    placeInformation.classList.add('shows__item');
+    showsList.appendChild(placeInformation);
 
-    let venueSubtitle = document.createElement('h3');
-    venueSubtitle.classList.add('shows__subtitle');
-    venueSubtitle.innerText = 'Venue';
-    venueInformation.appendChild(venueSubtitle);
+    let placeSubtitle = document.createElement('h3');
+    placeSubtitle.classList.add('shows__subtitle');
+    placeSubtitle.innerText = 'Venue';
+    placeInformation.appendChild(placeSubtitle);
 
-    let venueText = document.createElement('p');
-    venueText.classList.add('shows__information');
-    venueText.innerText = show.venue;
-    venueInformation.appendChild(venueText);
+    let placeText = document.createElement('p');
+    placeText.classList.add('shows__information');
+    placeText.innerText = show.place;
+    placeInformation.appendChild(placeText);
     
     let locationInformation = document.createElement('li');
     locationInformation.classList.add('shows__item');
