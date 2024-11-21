@@ -79,7 +79,7 @@ let renderComments = () => {
         commentFunctions.appendChild(likeIcon);
         likeIcon.addEventListener("click", handleLikeSubmit)
 
-        // Create delete button
+        // Create delete button & assign unique ID
         const deleteButton = document.createElement('div');
         deleteButton.classList.add('comment__delete');
         deleteButton.setAttribute('id', commentData[i].id)
@@ -123,37 +123,43 @@ let form = document.querySelector('.comment__form');
 form.addEventListener("submit", handleFormSubmit);
 
 /**Event handler for like button
- * Prevents deafault form behavious,
- * gets specifio comment ID
+ * gets specific comment ID
  * refetces comments then re-renders comment section
  */
 let handleLikeSubmit = async (event) => {
     try {
+        // Set target and get comment ID
         const likeButton = event.target;
         const commentId = likeButton.id
         console.log(`Like button pressed for ${commentId}`)
-    
+        
+        // Put like sent to API
         await api.putLike(commentId);
         await api.getComments();
-    
+        
+        // Re-render comments
         renderComments();
     } catch(error) {
         console.log("Error liking comment:", error);
     }
 }
 
-
+/**Event handler for delete button
+ * gets specific comment ID
+ * refetces comments then re-renders comment section
+ */
 let handleDeleteSubmit = async (event) => {
     try {
+        // Set target and get comment ID
         const deleteButton = event.currentTarget
         const commentId = deleteButton.id
         console.log(`Delete button pressed for ${commentId}`);
-        console.log('Delete Button:', deleteButton);
-        console.log('Comment ID:', commentId);
 
+        // Delete comment sent to API
         await api.deleteComment(commentId);
         await api.getComments();
 
+        // Re-render comments
         renderComments();
     } catch(error) {
         console.log("Error deleting comment:", error);
