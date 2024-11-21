@@ -23,13 +23,13 @@ export class bandSiteApi {
 	getComments = async () => {
 		try {
 			const response = await axios.get(`${this.baseUrl}comments?api_key=${this.apiKey}`);
-			const comments = response.data
+			const commentsResponse = response.data
 
 			// Sort comments by timestamp (newest first)
-			comments.sort((a,b) => b.timestamp - a.timestamp);
+			commentsResponse.sort((a,b) => b.timestamp - a.timestamp);
 
 			console.log("Comments retrieved")
-			return comments
+			return commentsResponse
 		} catch (error) {
 			console.log("Error getting comments:", error)
 		}
@@ -39,8 +39,8 @@ export class bandSiteApi {
 	getShowDates = async () => {
 		try {
 			const response = await axios.get(`${this.baseUrl}showdates?api_key=${this.apiKey}`);
-			const shows = response.data;
-			return shows;
+			const showsResponse = response.data;
+			return showsResponse;
 		} catch(error) {
 			console.log("Error getting showdates:", error)
 		}
@@ -49,12 +49,23 @@ export class bandSiteApi {
 	// Add a like to a comment
 	putLike = async (commentId) => {
 		try {
-			const response = await axios.put(`${this.baseUrl}comments/${commentId}/like?api_key=${this.apiKey}`, {});
+			const response = await axios.put(`${this.baseUrl}comments/${commentId}/like?api_key=${this.apiKey}`);
 			console.log(`Comment ${commentId} updated`)
-			const like = response;
-			return like;
+			const likeResponse = response;
+			return likeResponse;
 		} catch (error) {
 			console.log("Error putting like:", error)
+		}
+	}
+
+	deleteComment = async (commentId) => {
+		try {
+			const response = await axios.delete(`${this.baseUrl}comments/${commentId}?api_key=${this.apiKey}`);
+			console.log(`Comment ${commentId} deleted`);
+			const deleteResponse = response;
+			return deleteResponse;
+		} catch(error) {
+			console.log("Error deleting comment:", error)
 		}
 	}
 }

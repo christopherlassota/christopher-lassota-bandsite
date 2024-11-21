@@ -1,6 +1,6 @@
 // Import API class and initialize with API key
 import { bandSiteApi } from "./band-site-api.js";
-const API_KEY = `4ae0307a-ef25-454d-97e1-83776bd8b6a1`
+const API_KEY = `a59566de-fe40-40b4-b4f7-8c40c787dcb7`
 const api = new bandSiteApi(API_KEY);
 
 // Get comments from API
@@ -63,13 +63,29 @@ let renderComments = () => {
         commentText.innerText = comment.comment;
         commentContent.appendChild(commentText)
 
-        // Create like button
-        const likeButton = document.createElement('div');
-        likeButton.classList.add('comment__like');
-        likeButton.setAttribute('id', commentData[i].id)
-        commentContent.appendChild(likeButton);
-        likeButton.addEventListener("click", handleLikeSubmit)
+        // Create container for like and delete buttons
+        const commentFunctions = document.createElement('div');
+        commentFunctions.classList.add('comment__functions');
+        commentContent.appendChild(commentFunctions);
+        
+        // Create like button & assign unique ID
+        const likeIcon = document.createElement('img');
+        likeIcon.classList.add('comment__icon');
+        likeIcon.setAttribute('id', commentData[i].id)
+        likeIcon.setAttribute(
+            'src',
+            '../assets/icons/icon-like.svg'
+        );
+        commentFunctions.appendChild(likeIcon);
+        likeIcon.addEventListener("click", handleLikeSubmit)
 
+        // Create delete button
+        const deleteButton = document.createElement('div');
+        deleteButton.classList.add('comment__delete');
+        deleteButton.setAttribute('id', commentData[i].id)
+        deleteButton.innerHTML = 'DELETE'
+        commentFunctions.appendChild(deleteButton);
+        deleteButton.addEventListener("click", handleDeleteSubmit)
     }
 }
 
@@ -112,7 +128,6 @@ form.addEventListener("submit", handleFormSubmit);
  * refetces comments then re-renders comment section
  */
 let handleLikeSubmit = async (event) => {
-
     try {
         const likeButton = event.target;
         const commentId = likeButton.id
@@ -127,7 +142,23 @@ let handleLikeSubmit = async (event) => {
     }
 }
 
-const likeButton = document.querySelector('.comment__like')
+
+let handleDeleteSubmit = async (event) => {
+    try {
+        const deleteButton = event.currentTarget
+        const commentId = deleteButton.id
+        console.log(`Delete button pressed for ${commentId}`);
+        console.log('Delete Button:', deleteButton);
+        console.log('Comment ID:', commentId);
+
+        await api.deleteComment(commentId);
+        await api.getComments();
+
+        renderComments();
+    } catch(error) {
+        console.log("Error deleting comment:", error);
+    }
+}
 
 // Initial render of comments
 renderComments();
