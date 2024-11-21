@@ -40,7 +40,7 @@ showsHeader.appendChild(locationLabel)
 
 // Import API class and initialize with API key
 import { bandSiteApi } from "./band-site-api.js";
-const API_KEY = `4ae0307a-ef25-454d-97e1-83776bd8b6a1`
+import { API_KEY } from "./band-site-api.js";
 const api = new bandSiteApi(API_KEY);
 
 // Get show dates from API

@@ -1,6 +1,6 @@
 // Import API class and initialize with API key
 import { bandSiteApi } from "./band-site-api.js";
-const API_KEY = `a59566de-fe40-40b4-b4f7-8c40c787dcb7`
+import { API_KEY } from "./band-site-api.js";
 const api = new bandSiteApi(API_KEY);
 
 // Get comments from API

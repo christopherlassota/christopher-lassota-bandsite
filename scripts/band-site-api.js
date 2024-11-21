@@ -58,6 +58,7 @@ export class bandSiteApi {
 		}
 	}
 
+	// Delete a comment
 	deleteComment = async (commentId) => {
 		try {
 			const response = await axios.delete(`${this.baseUrl}comments/${commentId}?api_key=${this.apiKey}`);
@@ -69,3 +70,5 @@ export class bandSiteApi {
 		}
 	}
 }
+
+export const API_KEY = `4ed8bc8c-7532-42f7-8a34-79683a4f2f60`
