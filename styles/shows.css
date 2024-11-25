@@ -403,6 +403,9 @@ a {
   font-weight: 700;
   outline: none;
 }
+.shows__button:hover {
+  background-color: #000000;
+}
 @media (min-width: 867px) {
   .shows__button {
     width: 25%;

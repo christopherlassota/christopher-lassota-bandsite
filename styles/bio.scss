@@ -346,13 +346,17 @@
         padding: 1rem 0 0 0;
     }
 
-    &__icon {
-        width: 24px;
-        height: 24px;
-    }
-
-    // &__delete {
+    // &__icon {
+        
     // }
+    
+    // &__path {
+    
+    // }
+
+    &__delete {
+        color: $silver;
+    }
 }
 
 .footer {

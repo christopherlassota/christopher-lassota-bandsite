@@ -543,9 +543,8 @@ a {
   align-items: center;
   padding: 1rem 0 0 0;
 }
-.comment__icon {
-  width: 24px;
-  height: 24px;
+.comment__delete {
+  color: #AFAFAF;
 }
 
 .footer {

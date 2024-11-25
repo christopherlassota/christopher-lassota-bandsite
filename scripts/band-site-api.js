@@ -42,7 +42,7 @@ export class bandSiteApi {
 			const showsResponse = response.data;
 			return showsResponse;
 		} catch(error) {
-			console.log("Error getting showdates:", error)
+			console.log("Error getting showdates:", error);
 		}
 	}
 
